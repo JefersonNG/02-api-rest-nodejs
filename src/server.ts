@@ -1,11 +1,13 @@
 import { env } from "./env"
 import { app } from './app'
 
+
+const port = env.PORT || 4000
+
 app
-  .listen({ port: env.PORT }, (err, address) => {
-    if (err) {
-      console.error(err)
-      process.exit(1)
-    }
-    console.log(`Server listening at ${address}`)
+  .listen({
+    port: port
+  })
+  .then(() => {
+    console.log('server running')
   })
